@@ -21,8 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
+
     }
-..
+
     @OnClick(R.id.btn_base_anim)
     @Override
     public void onClick(View view) {
