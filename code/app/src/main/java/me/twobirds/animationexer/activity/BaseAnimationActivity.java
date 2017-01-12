@@ -12,10 +12,12 @@ import me.twobirds.animationexer.R;
 public class BaseAnimationActivity extends AppCompatActivity {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_animation);
+
+           setContentView(R.layout.activity_base_animation);
 
 
     }
