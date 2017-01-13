@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context="me.twobirds.animationexer.activity.MainActivity">
 
+    <include layout="@layout/toolbar" />
 
     <Button
         android:id="@+id/btn_base_anim"
