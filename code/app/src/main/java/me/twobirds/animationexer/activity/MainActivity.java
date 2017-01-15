@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_base_anim)
     public void onClick(View view) {
-        Log.i("cth", "onClick");
-        Toast.makeText(this, "onClick", Toast.LENGTH_SHORT).show();
         switch (view.getId()) {
             case R.id.btn_base_anim:
                 startActivity(new Intent(this, BaseAnimationActivity.class));
