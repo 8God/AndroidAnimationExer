@@ -3,27 +3,23 @@ package me.twobirds.animationexer.activity;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import me.twobirds.animationexer.R;
 
 /**
- * Created by DuoNuo on 2017/1/11.
+ * Created by CTH on 2017/1/11.
  */
 
-public class BaseAnimationActivity extends AppCompatActivity {
+public class TweenAnimationActivity extends BaseActivity {
+
 
     @BindView(R.id.iv_translate)
     ImageView translateView;      //平移的控件
@@ -47,21 +43,25 @@ public class BaseAnimationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_base_animation);
-
-        ButterKnife.bind(this);
-
+        initToolbar("补间动画+属性动画练习",true);
 
         initAnimMethod();
 
     }
 
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_base_animation;
+    }
+
     private void initAnimMethod() {
+        Log.i("cth","initAnimMethod");
+
         //平移动画
-        final Animation translateAnim = AnimationUtils.loadAnimation(BaseAnimationActivity.this, R.anim.anim_translate);
+        final Animation translateAnim = AnimationUtils.loadAnimation(TweenAnimationActivity.this, R.anim.anim_translate);
         translateAnim.setFillAfter(true);
-        translateAnim.setInterpolator(BaseAnimationActivity.this, R.anim.interpalator_bounce);
-        final Animation rotateReverseAnim = AnimationUtils.loadAnimation(BaseAnimationActivity.this, R.anim.anim_rotate_reverse);
+        translateAnim.setInterpolator(TweenAnimationActivity.this, R.anim.interpalator_bounce);
+        final Animation rotateReverseAnim = AnimationUtils.loadAnimation(TweenAnimationActivity.this, R.anim.anim_rotate_reverse);
         rotateReverseAnim.setFillAfter(true);
 
         translateTextView.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +72,7 @@ public class BaseAnimationActivity extends AppCompatActivity {
         });
 
         //旋转动画
-        final Animation rotateAnim = AnimationUtils.loadAnimation(BaseAnimationActivity.this, R.anim.anim_rotate);
+        final Animation rotateAnim = AnimationUtils.loadAnimation(TweenAnimationActivity.this, R.anim.anim_rotate);
         rotateAnim.setFillAfter(true);
         rotateAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -134,5 +134,6 @@ public class BaseAnimationActivity extends AppCompatActivity {
         });
 
     }
+
 
 }

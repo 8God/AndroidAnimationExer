@@ -17,7 +17,11 @@
         </activity>
 
         <activity
-            android:name=".activity.BaseAnimationActivity"
+            android:name=".activity.TweenAnimationActivity"
+            android:launchMode="standard"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.FrameAnimActivity"
             android:launchMode="standard"
             android:theme="@style/AppTheme" />
     </application>

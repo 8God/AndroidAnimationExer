@@ -10,8 +10,17 @@
     <include layout="@layout/toolbar" />
 
     <Button
-        android:id="@+id/btn_base_anim"
+        android:id="@+id/btn_tween_anim"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="基础动画" />
+        android:layout_height="64dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="补间动画+属性动画"
+        android:textSize="16sp"/>
+    <Button
+        android:id="@+id/btn_frame_anim"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="16sp"
+        android:text="帧动画" />
 </LinearLayout>
